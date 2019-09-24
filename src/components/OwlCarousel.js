@@ -6,60 +6,11 @@ import Carousel from "react-owl-carousel";
 import NextUs from "../assets/img/home/next.png";
 import PrevUs from "../assets/img/home/prev.png";
 
-function Page({ props }) {
-	return (
-		<div
-			style={{
-				display: "inline-block",
-				height: 150,
-				width: 200,
-				backgroundColor: "black",
-				zIndex: -999
-			}}
-		>
-			<p
-				style={{
-					color: "white",
-					fontSize: 40,
-					padding: 40
-				}}
-			>
-				{props}
-			</p>
-		</div>
-	);
-}
-
-function Prev() {
-	return (
-		<button
-			className="owl-prev"
-			onClick={() => {
-				ThisCarousel.next(100);
-				console.alert(NextUs);
-			}}
-		>
-			<img src={PrevUs} />
-		</button>
-	);
-}
-
-function Next() {
-	return (
-		<button
-			className="owl-next"
-			onClick={() => {
-				ThisCarousel.next(100);
-			}}
-		>
-			<img src={NextUs} />
-		</button>
-	);
-}
-
 let ThisCarousel;
 
-function OwlCarousel() {
+function OwlCarousel({ list }) {
+	// alert(list);
+
 	return (
 		// <div className="container uslugi-con con-row">
 		<Carousel
@@ -69,24 +20,20 @@ function OwlCarousel() {
 			className="owl-theme"
 			loop
 			center
-			navClass={["owl-prev owler", "owl-next owler"]}
+			navClass={["owl-prev", "owl-next"]}
 			nav
-			navContainerClass="owl-nav"
+			navContainerClass="owl-nav disabled"
 			margin={15}
 			items={5}
 			autoplayTimeout={3000}
 			autoplay
 			autoplaySpeed={500}
 			navText={[
-				"<a className='owl-next'><img src='assets/img/home/prev.png' /></a>",
-				"<a className='owl-next'><img src='assets/img/home/next.png' /></a>"
+				"<img src='assets/img/home/prev.png' />",
+				"<img src='assets/img/home/next.png' />"
 			]}
 		>
-			<OwlCarouselPage spanClass text img />
-			<OwlCarouselPage />
-			<OwlCarouselPage />
-			<OwlCarouselPage />
-			<OwlCarouselPage />
+			{list && list.map(({ spanClass, text, img }) => <OwlCarouselPage {...{ spanClass, text, img }} />)}
 		</Carousel>
 		// </div>
 	);
