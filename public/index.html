@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="logo192.png" />
-    <!--
+	<head>
+		<meta charset="utf-8" />
+		<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#000000" />
+		<meta
+			name="description"
+			content="Web site created using create-react-app"
+		/>
+		<link rel="apple-touch-icon" href="logo192.png" />
+		<!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+		<!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,12 +24,57 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+
+		<!-- custom links -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="assets/img/icon/uslugi/icomoon/style.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" type="text/css" href="asset/img/home/favicon.png" />
+		<link
+			rel="apple-touch-icon"
+			type="text/css"
+			href="asset/img/home/favicon.png"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="../src/assets/lib/bootstrap/css/bootstrap.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="../src/assets/lib/font-awesome/css/font-awesome.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="../src/assets/lib/Owl/dist/assets/owl.carousel.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="../src/assets/lib/Owl/dist/assets/owl.theme.default.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="assets/lib/fancybox/dist/jquery.fancybox.min.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="../src/assets/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../src/assets/css/media.css" />
+
+		<title>React App</title>
+	</head>
+	<body>
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<div id="root"></div>
+		<!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -39,5 +84,55 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+
+		<!-- custom js files -->
+		<script
+			type="text/javascript"
+			src="assets/lib/jquery/jquery-3.4.1.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="assets/lib/jquery/popper.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="assets/lib/bootstrap/js/bootstrap.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="assets/lib/Owl/dist/owl.carousel.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="assets/lib/fancybox/dist/jquery.fancybox.min.js"
+		></script>
+		<!-- <script type="text/javascript" src="assets/js/main.js"></script> -->
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("section.uslugi .owl-carousel .owl-nav button.owl-next").html(
+					$("img#next-icon-us")
+				);
+				$("section.uslugi .owl-carousel .owl-nav button.owl-prev").html(
+					$("img#prev-icon-us")
+				);
+			});
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				let next_icon = $("img#next-icon-po");
+				let prev_icon = $("img#prev-icon-po");
+
+				let button_next = $(
+					"section.polez .owl-carousel .owl-nav button.owl-next"
+				);
+				let button_prev = $(
+					"section.polez .owl-carousel .owl-nav button.owl-prev"
+				);
+
+				button_next.html(next_icon);
+				button_prev.html(prev_icon);
+			});
+		</script>
+	</body>
 </html>
