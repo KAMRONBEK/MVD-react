@@ -16,8 +16,37 @@ import PrevPo from "../assets/img/home/prev.png";
 import SliderRight from "../assets/img/home/slide-right.png";
 import SliderLeft from "../assets/img/home/slide-left.png";
 
+import Reform1 from "../assets/img/home/reform1.jpg";
+import Reform2 from "../assets/img/home/reform2.jpg";
+import Reform3 from "../assets/img/home/reform3.jpg";
+import Reform4 from "../assets/img/home/reform4.jpg";
+import Prois1 from "../assets/img/home/prois1.jpg";
+import Prois2 from "../assets/img/home/prois2.jpg";
+import Prois3 from "../assets/img/home/prois3.jpg";
+import Prois4 from "../assets/img/home/prois4.jpg";
+import Per1 from "../assets/img/home/per1.png";
+import Per2 from "../assets/img/home/per2.png";
+import Per3 from "../assets/img/home/per3.png";
+import Per4 from "../assets/img/home/per4.png";
+import Per5 from "../assets/img/home/per5.png";
+import Per6 from "../assets/img/home/per6.png";
+import Per7 from "../assets/img/home/per7.png";
+import Per8 from "../assets/img/home/per8.png";
+import Per9 from "../assets/img/home/per9.png";
+import MapImage from "../assets/img/home/map.png";
+import PhoneImage from "../assets/img/home/phone.png";
+import XarRight from "../assets/img/home/xar-right.jpg";
+import Link1 from "../assets/img/home/link1.png";
+import Link2 from "../assets/img/home/link2.png";
+import Link3 from "../assets/img/home/link3.png";
+import Link4 from "../assets/img/home/link4.png";
+import Link5 from "../assets/img/home/link5.png";
+import FooterImage from "../assets/img/home/footer.png";
+import FooPhone from "../assets/img/home/foo-phone.png";
+
 import MainSlider from '../components/MainSlider';
 import OwlCarousel from "../components/OwlCarousel";
+import { from } from "rxjs";
 
 function Home(props) {
 	return (
@@ -578,7 +607,7 @@ function Home(props) {
 					<div className="reform-item">
 						<div className="inner">
 							<div className="re-left">
-								<img src="image/home/reform1.jpg"/>
+								<img src={Reform1}/>
 							</div>
 							<div className="re-right">
 								<button className="button-yellow">18 июля 2019</button>
@@ -591,7 +620,7 @@ function Home(props) {
 					<div className="reform-item">
 						<div className="inner">
 							<div className="re-left">
-								<img src="image/home/reform2.jpg"/>
+								<img src={Reform2}/>
 							</div>
 							<div className="re-right">
 								<button className="button-yellow">25 мая 2019</button>
@@ -607,7 +636,7 @@ function Home(props) {
 					<div className="reform-item">
 						<div className="inner">
 							<div className="re-left">
-								<img src="image/home/reform3.jpg"/>
+								<img src={Reform3}/>
 							</div>
 							<div className="re-right">
 								<button className="button-yellow">6 августа 2019</button>
@@ -620,7 +649,7 @@ function Home(props) {
 					<div className="reform-item">
 						<div className="inner">
 							<div className="re-left">
-								<img src="image/home/reform4.jpg"/>
+								<img src={Reform4}/>
 							</div>
 							<div className="re-right">
 								<button className="button-yellow">6 августа 2019</button>
@@ -685,7 +714,7 @@ function Home(props) {
 					<aside className="prois-in">
 						<figure>
 							<a href="#!">
-								<img src="image/home/prois1.jpg"/>
+								<img src={Prois1}/>
 							</a>
 						</figure>
 						<button className="button-yellow">12 августа 2019</button>
@@ -698,7 +727,7 @@ function Home(props) {
 					<aside className="prois-in">
 						<figure>
 							<a href="#!">
-								<img src="image/home/prois2.jpg"/>
+								<img src={Prois2}/>
 							</a>
 						</figure>
 						<button className="button-yellow">12 августа 2019</button>
@@ -711,7 +740,7 @@ function Home(props) {
 					<aside className="prois-in">
 						<figure>
 							<a href="#!">
-								<img src="image/home/prois3.jpg"/>
+								<img src={Prois3}/>
 							</a>
 						</figure>
 						<button className="button-yellow">12 августа 2019</button>
@@ -724,7 +753,7 @@ function Home(props) {
 					<aside className="prois-in">
 						<figure>
 							<a href="#!">
-								<img src="image/home/prois4.jpg"/>
+								<img src={Prois4}/>
 							</a>
 						</figure>
 						<button className="button-yellow">11 августа 2019</button>
@@ -810,7 +839,7 @@ function Home(props) {
 					<div className="peres-flex">
 						<div className="peres-flex-in">
 							<div className="left">
-								<img src="image/home/per1.png"/>
+								<img src={Per1}/>
 							</div>
 							<div>
 								<h1>1</h1>
@@ -819,7 +848,7 @@ function Home(props) {
 						</div>
 						<div className="peres-flex-in">
 							<div className="left">
-								<img src="image/home/per2.png"/>
+								<img src={Per2}/>
 							</div>
 							<div>
 								<h1>1</h1>
@@ -828,7 +857,7 @@ function Home(props) {
 						</div>
 						<div className="peres-flex-in">
 							<div className="left">
-								<img src="image/home/per3.png"/>
+								<img src={Per3}/>
 							</div>
 							<div>
 								<h1>3</h1>
@@ -837,7 +866,7 @@ function Home(props) {
 						</div>
 						<div className="peres-flex-in">
 							<div className="left">
-								<img src="image/home/per4.png"/>
+								<img src={Per4}/>
 							</div>
 							<div>
 								<h1>12</h1>
@@ -846,7 +875,7 @@ function Home(props) {
 						</div>
 						<div className="peres-flex-in">
 							<div className="left">
-								<img src="image/home/per5.png"/>
+								<img src={Per5}/>
 							</div>
 							<div>
 								<h1>16</h1>
@@ -855,7 +884,7 @@ function Home(props) {
 						</div>
 						<div className="peres-flex-in">
 							<div className="left">
-								<img src="image/home/per6.png"/>
+								<img src={Per6}/>
 							</div>
 							<div>
 								<h1>10</h1>
@@ -864,7 +893,7 @@ function Home(props) {
 						</div>
 						<div className="peres-flex-in">
 							<div className="left">
-								<img src="image/home/per7.png"/>
+								<img src={Per7}/>
 							</div>
 							<div>
 								<h1>1</h1>
@@ -873,7 +902,7 @@ function Home(props) {
 						</div>
 						<div className="peres-flex-in">
 							<div className="left">
-								<img src="image/home/per8.png"/>
+								<img src={Per8}/>
 							</div>
 							<div>
 								<h1>25</h1>
@@ -882,7 +911,7 @@ function Home(props) {
 						</div>
 						<div className="peres-flex-in">
 							<div className="left">
-								<img src="image/home/per9.png"/>
+								<img src={Per9}/>
 							</div>
 							<div>
 								<h1>25</h1>
@@ -1005,11 +1034,11 @@ function Home(props) {
 							<h5 id="title-bottom">Джизакская область</h5>
 							<div className="vdb-inner">
 								<div className="one">
-									<img src="image/home/map.png"/>
+									<img src={MapImage}/>
 									<span className="ml-2">Руководство</span>
 								</div>
 								<div>
-									<img src="image/home/phone.png"/>
+									<img src={PhoneImage}/>
 									<span className="ml-2">Контактная информация</span>
 								</div>	
 							</div>
@@ -1019,7 +1048,7 @@ function Home(props) {
 				<div className="col-xl-3 col-md-6">
 					<div className="xar-right">
 						<figure>
-							<img src="image/home/xar-right.jpg"/>
+							<img src={XarRight}/>
 							<div className="xar-img-before">
 								<h2>2019</h2>
 								<p>Год активных инвестиций и социального развития</p>
@@ -1071,7 +1100,7 @@ function Home(props) {
 			    <div className="item">
 			    	<aside className="polez-inner">
 			    		<a className="polez-link-top" href="#!">
-			    			<img src="image/home/link1.png"/>
+			    			<img src={Link1}/>
 			    		</a>
 			    		<a className="polez-link-bottom" href="#!">
 			    			Официальный веб-сайт <br/> Президента Республики <br/>Узбекистан
@@ -1081,7 +1110,7 @@ function Home(props) {
 			    <div className="item">
 			    	<aside className="polez-inner">
 			    		<a className="polez-link-top" href="#!">
-			    			<img src="image/home/link2.png"/>
+			    			<img src={Link2}/>
 			    		</a>
 			    		<a className="polez-link-bottom" href="#!">
 			    			Правительственный портал <br/>Республики Узбекистан
@@ -1091,7 +1120,7 @@ function Home(props) {
 			    <div className="item">
 			    	<aside className="polez-inner">
 			    		<a className="polez-link-top" href="#!">
-			    			<img src="image/home/link3.png"/>
+			    			<img src={Link3}/>
 			    		</a>
 			    		<a className="polez-link-bottom" href="#!">
 			    			Портал открытых данных<br/> Республики Узбекистан
@@ -1101,7 +1130,7 @@ function Home(props) {
   			    <div className="item">
 			    	<aside className="polez-inner">
 			    		<a className="polez-link-top" href="#!">
-			    			<img src="image/home/link4.png"/>
+			    			<img src={Link4}/>
 			    		</a>
 			    		<a className="polez-link-bottom" href="#!">
 			    			Институт пожарной<br/> безопасности МВД
@@ -1111,7 +1140,7 @@ function Home(props) {
 			    <div className="item">
 			    	<aside className="polez-inner">
 			    		<a className="polez-link-top" href="#!">
-			    			<img src="image/home/link5.png"/>
+			    			<img src={Link5}/>
 			    		</a>
 			    		<a className="polez-link-bottom" href="#!">
 			    			Академия МВД
@@ -1121,7 +1150,7 @@ function Home(props) {
 			    <div className="item">
 			    	<aside className="polez-inner">
 			    		<a className="polez-link-top" href="#!">
-			    			<img src="image/home/link1.png"/>
+			    			<img src={Link1}/>
 			    		</a>
 			    		<a className="polez-link-bottom" href="#!">
 			    			Официальный веб-сайт <br/> Президента Республики <br/>Узбекистан
@@ -1131,7 +1160,7 @@ function Home(props) {
 			    <div className="item">
 			    	<aside className="polez-inner">
 			    		<a className="polez-link-top" href="#!">
-			    			<img src="image/home/link2.png"/>
+			    			<img src={Link2}/>
 			    		</a>
 			    		<a className="polez-link-bottom" href="#!">
 			    			Правительственный портал <br/>Республики Узбекистан
@@ -1141,7 +1170,7 @@ function Home(props) {
 			    <div className="item">
 			    	<aside className="polez-inner">
 			    		<a className="polez-link-top" href="#!">
-			    			<img src="image/home/link3.png"/>
+			    			<img src={Link3}/>
 			    		</a>
 			    		<a className="polez-link-bottom" href="#!">
 			    			Портал открытых данных<br/> Республики Узбекистан
@@ -1151,7 +1180,7 @@ function Home(props) {
   			    <div className="item">
 			    	<aside className="polez-inner">
 			    		<a className="polez-link-top" href="#!">
-			    			<img src="image/home/link4.png"/>
+			    			<img src={Link4}/>
 			    		</a>
 			    		<a className="polez-link-bottom" href="#!">
 			    			Институт пожарной<br/> безопасности МВД
@@ -1161,7 +1190,7 @@ function Home(props) {
 			    <div className="item">
 			    	<aside className="polez-inner">
 			    		<a className="polez-link-top" href="#!">
-			    			<img src="image/home/link5.png"/>
+			    			<img src={Link5}/>
 			    		</a>
 			    		<a className="polez-link-bottom" href="#!">
 			    			Академия МВД
@@ -1202,7 +1231,7 @@ function Home(props) {
 				<div className="col-lg-4 col-md-12">
 					<aside className="foo-two-in">
 						<a href="#!">
-							<img src="image/home/footer.png"/>
+							<img src={FooterImage}/>
 						</a>
 						<a href="#!">
 							<span>МИНИСТЕРСТВО ВНУТРЕННИХ<br/> ДЕЛ РЕСПУБЛИКИ УЗБЕКИСТАН</span>
@@ -1210,7 +1239,7 @@ function Home(props) {
 					</aside>
 				</div>
 				<div className="col-lg-2 col-md-6 foo-two-col">
-                    <a href="#!"><img src="image/home/foo-phone.png"/></a>
+                    <a href="#!"><img src={FooPhone}/></a>
                     <div>
                         <a className="footer-tel" href="tel:102">
                         	<p>По происшествиям</p>
@@ -1219,7 +1248,7 @@ function Home(props) {
                     </div>
                 </div>
                 <div className="col-lg-3 col-md-6 foo-two-col">
-                    <a href="#!"><img src="image/home/foo-phone.png"/></a>
+                    <a href="#!"><img src={FooPhone}/></a>
                     <div>
                     	<a className="footer-tel" href="tel:1102">
          	               <p>Телефон доверия</p>
