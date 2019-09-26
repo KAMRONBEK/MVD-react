@@ -1,6 +1,6 @@
-import React from "react";
+import React, { lazy } from "react";
 
-
+//assets
 import sliderImage1 from '../assets/img/home/slide1.jpg';
 import sliderImage2 from '../assets/img/home/slide6.jpg';
 import sliderImage3 from '../assets/img/home/slide8.jpg';
@@ -41,61 +41,61 @@ import Link2 from "../assets/img/home/link2.png";
 import Link3 from "../assets/img/home/link3.png";
 import Link4 from "../assets/img/home/link4.png";
 import Link5 from "../assets/img/home/link5.png";
-import FooterImage from "../assets/img/home/footer.png";
-import FooPhone from "../assets/img/home/foo-phone.png";
 
+
+// components
 import MainSlider from '../components/MainSlider';
 import OwlCarousel from "../components/OwlCarousel";
-// import { from } from "rxjs";
+import Header from '../components/Header';
+import Footer from "../components/Footer";
 
 let usCarouselList = [{
-	spanClass:'icon-document',
-	text:"some text"
-},{
-	spanClass:'icon-calendar-1',
-	text:"some text"
-},{
-	spanClass:'icon-calculating',
-	text:"some text"
-},{
-	spanClass:'icon-file',
-	text:"some text"
-},{
-	spanClass:'icon-auction',
-	text:"some text"
-},{
-	spanClass:'icon-calculating',
-	text:"some text"
+	spanClass: 'icon-document',
+	text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt "
+}, {
+	spanClass: 'icon-calendar-1',
+	text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt "
+}, {
+	spanClass: 'icon-calculating',
+	text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt "
+}, {
+	spanClass: 'icon-file',
+	text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt "
+}, {
+	spanClass: 'icon-auction',
+	text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt "
+}, {
+	spanClass: 'icon-calculating',
+	text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt "
 }]
 
 
 let poCarouselList = [{
 	img: Link1,
-	text:'some text up top some text down here'
+	text: 'some text up top some text down here'
 },
 {
 	img: Link1,
-	text:'some text up top some text down here'
+	text: 'some text up top some text down here'
 },
 {
 	img: Link1,
-	text:'some text up top some text down here'
+	text: 'some text up top some text down here'
 },
 {
-	img: Link1,	
-	text:'some text up top some text down here'
+	img: Link1,
+	text: 'some text up top some text down here'
 }]
 
-function Home(props) {
-
-	
+let Home = ({ props }) => {
 
 	return (
 		<body>
-			<header>
+			<Header activeHeader='Главная' />
+			{/* <header>
 				<nav className="row-nav">
 					<ul className="nav-ul">
-						<li className="row-li"><a className="active" href="home.html">Главная</a></li>
+						<li className="row-li"><a className="active" href="/">Главная</a></li>
 						<li className="row-li">
 							<a href="ruko.html">О министерстве</a><i className="fa fa-angle-down" aria-hidden="true"></i>
 							<ul className="pad-menu">
@@ -163,7 +163,7 @@ function Home(props) {
 						<img src="../assets/img/home/menu.png" />
 					</button>
 				</div>
-			</header>
+			</header> */}
 			<div className="banner-top">
 				<div className="ban-left">
 					<div>
@@ -550,8 +550,8 @@ function Home(props) {
 				</div>
 				<div className="container uslugi-con con-row">
 					<div className="owl-theme">
-				<OwlCarousel list={usCarouselList} />
-			    {/* <div class="item">
+						<OwlCarousel list={usCarouselList} />
+						{/* <div class="item">
 			    	<aside class="uslugi-in">
 			    		<div class="us-icon-div">
 			    			<span class="icon-document"></span>
@@ -632,7 +632,7 @@ function Home(props) {
 			    		<p>Онлайн аукцион<br/> автономеров</p>
 			    	</aside>
 			    </div> */}
-			</div>
+					</div>
 				</div>
 			</section>
 			<section className="reform">
@@ -1244,7 +1244,9 @@ function Home(props) {
 					</div>
 				</div>
 			</section>
-			<footer className="footer-one">
+
+			<Footer />
+			{/* <footer className="footer-one">
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-9 foo-one-col">
@@ -1318,7 +1320,7 @@ function Home(props) {
 						</div>
 					</div>
 				</div>
-			</footer>
+			</footer> */}
 			<section className="section-second">
 				<img id="next-icon-us" src={NextUs} />
 				<img id="prev-icon-us" src={PrevUs} />

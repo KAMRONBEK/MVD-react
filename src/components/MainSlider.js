@@ -51,7 +51,7 @@ function MainSlider() {
 					fade={true}
 					autoplay={true}
 					autoplaySpeed={2500}
-					cssEase="ease-in-out"
+					cssEase="ease"
 				>
 					<MainSliderPage sliderImage={sliderImage2} />
 					<MainSliderPage sliderImage={sliderImage1} />

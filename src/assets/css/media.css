@@ -40,6 +40,14 @@
 		margin-left: -36px;
 		margin-right: -36px;
 	}
+	section.uslugi .owl-carousel .owl-nav {
+		display: flex;
+		justify-content: space-between;
+		transform: translateY(-150px);
+		margin-left: -36px;
+		margin-right: -36px;
+	}
+
 	section.uslugi .owl-carousel .owl-dots {
 		display: none;
 	}
