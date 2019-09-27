@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import api from '../api';
 
 // components
 import Header from '../components/Header';
@@ -9,8 +10,22 @@ import Globe from "../assets/img/home/logo.png";
 import Eyes from "../assets/img/home/eyes.png";
 import Lang from "../assets/img/home/lang.png";
 
+let example = () => {
+    api.news.get()
+        .then(res => {
+            console.warn(res);
+            // (res);
+            return res
+            console.log(res.data);
+        })
+}
+
 let News = () => {
+
+    let [value, setValue] = useState(null)
+    setValue(example);
     return (
+
         <React.Fragment>
             <Header activeHeader='Пресс-центр' />
             <div class="banner-top">
@@ -27,8 +42,9 @@ let News = () => {
                         </a>
                         <a class="link-phone" href="#">
                             <i class="fa fa-phone" aria-hidden="true"></i>
-                            По происшествиям 102
-				</a>
+                            {/* По происшествиям 102 */}
+                            {value}
+                        </a>
                     </div>
                 </div>
                 <div class="ban-center">

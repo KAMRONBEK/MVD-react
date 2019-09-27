@@ -6,7 +6,6 @@ import sliderImage2 from "../assets/img/home/slide6.jpg";
 import sliderImage3 from "../assets/img/home/slide8.jpg";
 
 import MainSliderPage from "./MainSliderPage";
-import styled from "styled-components";
 
 function Prev() {
 	return (
