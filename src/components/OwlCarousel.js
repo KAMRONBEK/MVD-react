@@ -33,7 +33,7 @@ function OwlCarousel({ list }) {
 				"<img src='assets/img/home/next.png' />"
 			]}
 		>
-			{list && list.map(({ spanClass, text, img }) => <OwlCarouselPage {...{ spanClass, text, img }} />)}
+			{list && list.map(({ imageUrl,titleRu,link,type	 }) => <OwlCarouselPage {...{ imageUrl,titleRu,link,type }} />)}
 		</Carousel>
 		// </div>
 	);

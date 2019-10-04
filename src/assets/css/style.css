@@ -393,6 +393,7 @@ section.banner {
 
 div.carousel-item {
     position: relative;
+    overflow: hidden;
 }
 
 div.banner-praz {
@@ -652,7 +653,8 @@ div.us-icon-div {
 }
 
 div.us-icon-div img {
-    width: initial !important;
+    width: 50px !important;
+
 }
 
 section.uslugi .owl-carousel .owl-nav button.owl-next,
@@ -1791,4 +1793,8 @@ div.contact-left h6 {
     margin-top: 20px;
     text-align: center;
     -webkit-tap-highlight-color: transparent;
+}
+
+.item{
+    overflow: hidden;
 }

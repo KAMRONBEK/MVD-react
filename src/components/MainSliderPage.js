@@ -1,16 +1,13 @@
 import React from "react";
-    
-function MainSliderPage({ sliderImage }) {
+
+function MainSliderPage({ key, sliderImage, text, link }) {
 	return (
-		<div className="carousel-item active">
+		<div key={key} className="carousel-item active">
 			<img src={sliderImage} className="d-block w-100" alt="..." />
 			<div className="banner-praz"></div>
 			<div className="banner-text">
-				<h4>
-					Подведены итоги совершенствования деятельности служб миграции и
-					оформления гражданства
-				</h4>
-				<a className="abs" href="#!">
+				<h4>{text}</h4>
+				<a className="abs" href={link}>
 					<button className="button-slide">Подробнее</button>
 				</a>
 			</div>

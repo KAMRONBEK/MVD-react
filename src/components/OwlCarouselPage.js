@@ -1,24 +1,28 @@
 import React from "react";
 
-function OwlCarouselPage({ spanClass, text, img }) {
+function OwlCarouselPage({ imageUrl, titleRu, link, type }) {
 	return (
 		<div className="item">
-			{spanClass ? (
+			{type == "link" ? (
 				<aside className="uslugi-in">
 					<div className="us-icon-div">
-						<span className={spanClass}></span>
+						<img src={imageUrl} />
 					</div>
-					<p>{text}</p>
+					<a className="polez-link-bottom" href={link}>
+						{titleRu}
+					</a>
 				</aside>
 			) : (
-					<aside className="polez-inner">
-						<a className="polez-link-top" href="#!">
-							<img src={img} />
-						</a>
-						{/* <a className="polez-link-bottom" href="#!">Официальный веб-сайт <br /> Президента Республики <br />Узбекистан</a> */}
-						<a className='polez-link-bottom' href="#!">{text}</a>
-					</aside>
-				)}
+				<aside className="polez-inner">
+					<a className="polez-link-top" href="#!">
+						<img src={imageUrl} />
+					</a>
+					{/* <a className="polez-link-bottom" href="#!">Официальный веб-сайт <br /> Президента Республики <br />Узбекистан</a> */}
+					<a className="polez-link-bottom" href={link}>
+						{titleRu}
+					</a>
+				</aside>
+			)}
 		</div>
 	);
 }

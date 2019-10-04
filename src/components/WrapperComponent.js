@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import api from '../api/api';
+import React from 'react';
+
 
 // components
 import Header from '../components/Header';
@@ -11,6 +11,9 @@ import Eyes from "../assets/img/home/eyes.png";
 import Lang from "../assets/img/home/lang.png";
 import Eye from "../assets/img/news/eye.png";
 
+let WrapperComponent=({children,menu})=>
+{
+let value=null;
 
 function formatDate(timestamp){
     var x=new Date(timestamp);
@@ -20,25 +23,9 @@ function formatDate(timestamp){
     return dd +"-" + mm+"-" + yy;
  }
 
-
-let News = () => {
-
-    let [value, setValue] = useState([])
-
-    useEffect(()=>{
-        api.news.get()
-        .then(res => {
-            setValue(res.data);
-        })
-    },[])
-    
-
-
-    return (
-
-        <React.Fragment>
-            {/* <Header activeHeader='Пресс-центр' /> */}
-            <div class="banner-top">
+return(
+    <React.Fragment>
+          <div class="banner-top">
                 <div class="ban-left">
                     <div>
                         <a href="#">
@@ -52,7 +39,7 @@ let News = () => {
                         </a>
                         <a class="link-phone" href="#">
                             <i class="fa fa-phone" aria-hidden="true"></i>
-                            {/* По происшествиям 102 */}
+                            &nbsp;&nbsp;По происшествиям 102
                         </a>
                     </div>
                 </div>
@@ -91,7 +78,7 @@ let News = () => {
                         <div class="lang">
                             <div class="lang-show">
                                 <img src={Lang} />
-                                <a class="lang-link" href="#">Русский</a>
+                                <a class="lang-link" href="#"> &nbsp;Русский</a>
                                 <i class="fa fa-angle-down" aria-hidden="true"></i>
                             </div>
                             <ul class="lang-hide">
@@ -287,7 +274,7 @@ let News = () => {
             <section class="ns">
                 <div class="container con-left">
                     <div class="news-heading">
-                        <h3 class="news-head">Международное сотрудничество</h3>
+                        <h3 class="news-head">{menu&&menu.titleRu}</h3>
                     </div>
                 </div>
 
@@ -311,105 +298,11 @@ let News = () => {
                         <div class="col-xl-9 col-md-8 col-sm-6 ns-col-left">
                             <div class="container">
                                 <div class="row">
-                                  {value&&value.length&&value.map((news,index)=>{
-                                      return (  
-                                          <div class="col-xl-4 col-md-6">
-                                        <aside class="nps">
-                                            <figure>
-                                                <img src={news.mainImageUrl} />
-                                            </figure>
-                                            <div class="nps-center"><span class="left">{/*6 августа 2019*/}{formatDate(news.createdAt)}</span><img src={Eye} /><span class="right">568</span></div>
-                                            {/* <p>Состоялся визит делегации Министерства внутренних дел Республики Узбекистан в...</p> */}
-                                            <p>{news.descriptionRu}</p>
-                                            <a href="newspodrobni.html">Подробнее</a>
-                                        </aside>
-                                    </div>
-                                    )
-                                  })}
-                                    {/* <div class="col-xl-4 col-md-6">
-                                        <aside class="nps">
-                                            <figure>
-                                                <img src="image/news/news2.jpg" />
-                                            </figure>
-                                            <div class="nps-center"><span class="left">6 августа 2019</span><img src="image/news/eye.png" /><span class="right">538</span></div>
-                                            <p>Открыт путь для современного и инновационного подхода к вопросу подготовки кадров</p>
-                                            <a href="newspodrobni.html">Подробнее</a>
-                                        </aside>
-                                    </div>
-                                    <div class="col-xl-4 col-md-6">
-                                        <aside class="nps">
-                                            <figure>
-                                                <img src="image/news/news3.jpg" />
-                                            </figure>
-                                            <div class="nps-center"><span class="left">6 августа 2019</span><img src="image/news/eye.png" /><span class="right">644</span></div>
-                                            <p>Усиливается взаимодействие с Китаем в части научно-исследовательской деятельности в области пожарной...</p>
-                                            <a href="#!">Подробнее</a>
-                                        </aside>
-                                    </div>
-                                    <div class="col-xl-4 col-md-6">
-                                        <aside class="nps">
-                                            <figure>
-                                                <img src="image/news/news1.jpg" />
-                                            </figure>
-                                            <div class="nps-center"><span class="left">6 августа 2019</span><img src="image/news/eye.png" /><span class="right">568</span></div>
-                                            <p>Состоялся визит делегации Министерства внутренних дел Республики Узбекистан в...</p>
-                                            <a href="newspodrobni.html">Подробнее</a>
-                                        </aside>
-                                    </div>
-                                    <div class="col-xl-4 col-md-6">
-                                        <aside class="nps">
-                                            <figure>
-                                                <img src="image/news/news2.jpg" />
-                                            </figure>
-                                            <div class="nps-center"><span class="left">6 августа 2019</span><img src="image/news/eye.png" /><span class="right">538</span></div>
-                                            <p>Открыт путь для современного и инновационного подхода к вопросу подготовки кадров</p>
-                                            <a href="#!">Подробнее</a>
-                                        </aside>
-                                    </div>
-                                    <div class="col-xl-4 col-md-6">
-                                        <aside class="nps">
-                                            <figure>
-                                                <img src="image/news/news3.jpg" />
-                                            </figure>
-                                            <div class="nps-center"><span class="left">6 августа 2019</span><img src="image/news/eye.png" /><span class="right">644</span></div>
-                                            <p>Усиливается взаимодействие с Китаем в части научно-исследовательской деятельности в области пожарной...</p>
-                                            <a href="#!">Подробнее</a>
-                                        </aside>
-                                    </div>
-                                    <div class="col-xl-4 col-md-6">
-                                        <aside class="nps">
-                                            <figure>
-                                                <img src="image/news/news1.jpg" />
-                                            </figure>
-                                            <div class="nps-center"><span class="left">6 августа 2019</span><img src="image/news/eye.png" /><span class="right">568</span></div>
-                                            <p>Состоялся визит делегации Министерства внутренних дел Республики Узбекистан в...</p>
-                                            <a href="#!">Подробнее</a>
-                                        </aside>
-                                    </div>
-                                    <div class="col-xl-4 col-md-6">
-                                        <aside class="nps">
-                                            <figure>
-                                                <img src="image/news/news2.jpg" />
-                                            </figure>
-                                            <div class="nps-center"><span class="left">6 августа 2019</span><img src="image/news/eye.png" /><span class="right">538</span></div>
-                                            <p>Открыт путь для современного и инновационного подхода к вопросу подготовки кадров</p>
-                                            <a href="#!">Подробнее</a>
-                                        </aside>
-                                    </div>
-                                    <div class="col-xl-4 col-md-6">
-                                        <aside class="nps">
-                                            <figure>
-                                                <img src="image/news/news3.jpg" />
-                                            </figure>
-                                            <div class="nps-center"><span class="left">6 августа 2019</span><img src="image/news/eye.png" /><span class="right">644</span></div>
-                                            <p>Усиливается взаимодействие с Китаем в части научно-исследовательской деятельности в области пожарной...</p>
-                                            <a href="#!">Подробнее</a>
-                                        </aside>
-                                    </div> */}
-
+                                {children}
                                 </div>
                             </div>
-                            <div class="ns-pagination">
+                           {/* pagination */}
+                            {/* <div class="ns-pagination">
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination">
                                         <li class="page-item">
@@ -431,7 +324,7 @@ let News = () => {
                                         </li>
                                     </ul>
                                 </nav>
-                            </div>
+                            </div> */}
                         </div>
                         <div class="col-xl-3 col-md-4 col-sm-6 ns-right">
                             <div class="news-right-div">
@@ -472,8 +365,8 @@ let News = () => {
                     </form>
                 </div>
             </section>
-        </React.Fragment>
-    )
+    </React.Fragment>
+)
 }
 
-export default News;
+export default WrapperComponent;

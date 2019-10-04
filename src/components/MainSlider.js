@@ -31,7 +31,7 @@ function Next() {
 
 let ThisSlider;
 
-function MainSlider() {
+function MainSlider({ slider }) {
 	return (
 		<div className="carousel slide carousel-fade">
 			<div className="carousel-inner">
@@ -49,12 +49,23 @@ function MainSlider() {
 					vertical={true}
 					fade={true}
 					autoplay={true}
-					autoplaySpeed={2500}
+					autoplaySpeed={5000}
 					cssEase="ease"
 				>
+					{slider &&
+						slider.map((slider, index) => {
+							return (
+								<MainSliderPage
+									key={index}
+									sliderImage={slider && slider.imageUrl}
+									text={slider.titleRu}
+									link={slider.link}
+								/>
+							);
+						})}
+					{/* <MainSliderPage sliderImage={sliderImage1} />
 					<MainSliderPage sliderImage={sliderImage2} />
-					<MainSliderPage sliderImage={sliderImage1} />
-					<MainSliderPage sliderImage={sliderImage3} />
+					<MainSliderPage sliderImage={sliderImage3} /> */}
 				</Slider>
 			</div>
 		</div>
