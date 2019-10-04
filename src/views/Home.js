@@ -1,5 +1,6 @@
 import React, { lazy, useState, useEffect, useReducer } from "react";
 import api from "../api/api";
+import CountUp from "react-countup";
 
 //assets
 import sliderImage1 from "../assets/img/home/slide1.jpg";
@@ -115,20 +116,9 @@ let Home = ({ menu }) => {
 		}
 	};
 
-	let dataReducer = (state, action) => {
-		switch (action.type) {
-			case `ADD_${action.key}`:
-				return { ...state, [action.key]: state[action.key] + action.data };
-			case `SET_${action.key}`:
-				return { ...state, [action.key]: action.data };
-			default:
-				return state;
-		}
-	};
-
-	const [data, dispatchData] = useReducer(dataReducer, {});
 	const [sliders, dispatch] = useReducer(reducerSliders, {});
 	let [regions, setRegions] = useState({});
+	const [crimes, setCrimes] = useState({});
 
 	useEffect(() => {
 		api.sliders.getMain().then(res => {
@@ -144,25 +134,14 @@ let Home = ({ menu }) => {
 		api.regions.get().then(res => {
 			setRegions(res.data);
 		});
-
-		if (regions && regions.length > 0) {
-			regions.map(region => {
-				for (let key in region) {
-					console.warn(key);
-					console.warn(regions);
-					if (
-						key !== "id" &&
-						typeof region[key] !== "string" &&
-						region[key] !== "object" &&
-						region[key]
-					) {
-						console.log(key);
-						dispatchData({ type: `ADD_${key}`, data: region[key], key });
-					}
-				}
-			});
-		}
+		//crimes
+		api.regions.getCrimes().then(res => {
+			setCrimes(res.data);
+		});
 	}, []);
+
+	// console.log(crimes);
+	// console.log("crimes");
 
 	let [colorString, setColorString] = useState("000000000000000");
 
@@ -1237,16 +1216,23 @@ let Home = ({ menu }) => {
 						</div>
 						<div className="col-lg-8 peres-right">
 							<div className="peres-flex">
-								<div className="peres-flex-in">
-									<div className="left">
-										<img src={Per1} />
-									</div>
-									<div>
-										<h1>1</h1>
-										<p>Убийства</p>
-									</div>
-								</div>
-								<div className="peres-flex-in">
+								{crimes &&
+									Object.keys(crimes).map(key => {
+										return (
+											<div className="peres-flex-in">
+												<div className="left">
+													<img src={Per1} />
+												</div>
+												<div>
+													<h1>
+														<CountUp start={0} duration={5} end={crimes[key]} />
+													</h1>
+													<p>{key}</p>
+												</div>
+											</div>
+										);
+									})}
+								{/* <div className="peres-flex-in">
 									<div className="left">
 										<img src={Per2} />
 									</div>
@@ -1319,7 +1305,7 @@ let Home = ({ menu }) => {
 											Другие <br /> переступления
 										</p>
 									</div>
-								</div>
+								</div> */}
 							</div>
 						</div>
 					</div>

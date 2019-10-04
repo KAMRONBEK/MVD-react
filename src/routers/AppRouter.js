@@ -115,15 +115,22 @@ const AppRouter = ({ location }) => {
 							);
 						}
 
-						return <Route path="/" component={Home} />;
+						return (
+							<Route exact component={() => <DynamicComponent menu={menu} />} />
+						);
 					})}
+				<Route location={location} path="/" component={Home} />
 
 				<Route
 					path="/news/:alias"
 					component={props => <NewsItem props={props} />}
 				/>
 
-				<Route location={location} path="/example" component={Home} />
+				<Route
+					location={location}
+					path="/example"
+					component={() => <DynamicComponent />}
+				/>
 				<Route location={location} component={NotFoundPage} />
 			</Switch>
 		</div>
